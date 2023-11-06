@@ -6,31 +6,54 @@
     <title>Document</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
+    background-color: rgb(49, 47, 47);
+}
+
+.inputAndSearchContainer{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-container {
     text-align: center;
     margin-top: 50px;
+    padding: 5px;
+    width: 300px;
+    border-radius: 25px;
+    background-color: rgb(170, 14, 35);
+    box-shadow: 2px 2px 20px rgb(170, 14, 35);
 }
 
 #cityInput {
     padding: 10px;
     width: 200px;
+    border: none;
+    background-color: transparent;
+    color:white;
+}
+
+#cityInput:focus{
+    outline: none;
 }
 
 #searchButton {
     padding: 10px;
-    background-color: #007BFF;
+    background-color:transparent;
     color: white;
     border: none;
 }
 
+#searchButton:hover{
+    color: gray;
+}
+
 .overlay {
     display: none;
-    position: fixed;
+    position: fixed; 
     top: 0;
-    left: 0;
+    left: 0; 
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -41,8 +64,12 @@
 .popup {
     background-color: white;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.popup >h1{
+    color: rgb(92, 92, 179);
 }
 
 #closeButton {
@@ -55,12 +82,15 @@
     </style>
 </head>
 <body>
-    <div class="search-container">
-        <input type="text" id="cityInput" placeholder="Enter city name">
-        <button id="searchButton">Search</button>
+    <div class="inputAndSearchContainer">
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Search...">
+            <button id="searchButton">Search</button>
+        </div>
     </div>
     <div id="overlay" class="overlay">
         <div class="popup">
+            <h1>City Weather Details...</h1>
             <span id="cityName"></span>
             <span id="temperature"></span>
             <span id="weatherDescription"></span>

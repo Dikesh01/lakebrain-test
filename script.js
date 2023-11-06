@@ -15,7 +15,7 @@ searchButton.addEventListener("click", () => {
             cityName.innerText = "City: " + data.name;
             temperature.innerText = "Temperature: " + data.main.temp + "°C";
             weatherDescription.innerText = "Weather: " + data.weather[0].main + ", " + data.weather[0].description;
-            overlay.style.display = "block";
+            overlay.style.display = "flex";
         })
         .catch(error => console.error("Error fetching data:", error));
 });
